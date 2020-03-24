@@ -31,7 +31,7 @@ function [output] = pooling_layer_forward(input, layer)
             for c_idx = 1:w_out
                 for channel_idx = 1:c
                     % compute the area for doing the pooling at the location
-                    pooling_area = current_input(1+(r_idx-1)*stride:k+(r_idx-1)*stride, 1+(c_idx-1)*stride:k+(c_idx-1)*stride, channel);
+                    pooling_area = current_input(1+(r_idx-1)*stride:k+(r_idx-1)*stride, 1+(c_idx-1)*stride:k+(c_idx-1)*stride, channel_idx);
                     % do max pooling on the area
                     output.data(r_idx, c_idx, channel_idx, batch_idx) = max(pooling_area, [], 'all');
                 end
