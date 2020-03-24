@@ -35,7 +35,7 @@ output.channel = num;
 output.batch_size = batch_size;
 
 % init the output datastructure
-output.data = zeros([h_out * w_out * num, batch_size]);
+output.data = zeros([h_out, w_out, num, batch_size]);
 
 % loop over the images to do the convolution
 for batch_idx = 1:batch_size
@@ -62,8 +62,7 @@ for batch_idx = 1:batch_size
             end
         end
     end
-    output.data = reshape(output.data, [h_out * w_out * num, batch_size]);
 end
-
+output.data = reshape(output.data, [h_out * w_out * num, batch_size]);
 end
 
