@@ -7,5 +7,5 @@ output.batch_size = input.batch_size;
 % Replace the following line with your implementation.
 output.data = input.data;
 % change the data that is smaller than zero to zero
-output.data = max(output.data, 0);
+output.data(output.data <= 0) = 0;
 end

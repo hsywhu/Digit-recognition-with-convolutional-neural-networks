@@ -51,7 +51,7 @@ ytrain = ytrain(:, new_order);
 curr_batch = 1;
 
 for iter = 1 : max_iter
-    
+    fprintf('iter %f\n', round(iter));
     if (curr_batch > m_train) 
         new_order = randperm(m_train);
         xtrain = xtrain(:, new_order);
