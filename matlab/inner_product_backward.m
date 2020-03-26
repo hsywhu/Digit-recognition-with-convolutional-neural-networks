@@ -1,8 +1,11 @@
 function [param_grad, input_od] = inner_product_backward(output, input, layer, param)
 
 % Replace the following lines with your implementation.
+% init b and w
 param_grad.b = zeros(size(param.b));
 param_grad.w = zeros(size(param.w));
+
+% input_od can be directly calculated
 input_od = param.w * output.diff;
 
 for batch_idx = 1:input.batch_size
